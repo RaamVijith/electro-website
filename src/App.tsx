@@ -12,7 +12,7 @@ function App() {
     {
       image: 'https://electro.madrasthemes.com/3x/wp-content/uploads/sites/4/2023/11/blog-3.jpg',
       title: 'Entertainment Device 2',
-      price: '$250 OFF',
+      price: '$250 OFFf',
     },
     // Add more slide data as needed
   ];
