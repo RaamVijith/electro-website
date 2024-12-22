@@ -1,5 +1,25 @@
 import React, { useState } from "react";
-
+import {
+  Camera,
+  Fan,
+  Gamepad2,
+  Headphones,
+  Heart,
+  Laptop,
+  Mail,
+  MapPin,
+  MonitorPlay,
+  PenTool,
+  Phone,
+  RefreshCcw,
+  Search,
+  ShoppingBag,
+  Smartphone,
+  TabletSmartphone,
+  Truck,
+  Tv,
+  User,
+} from "lucide-react";
 const Navbar: React.FC = () => {
   // State for sidebar visibility
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -8,106 +28,157 @@ const Navbar: React.FC = () => {
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
 
   return (
-    <header className="bg-white md:bg-yellow-400 relative">
+    <header className="bg-white  relative px-4 md:px-8 lg:px-[4vw]">
       {/* Top Bar */}
-      <div className="hidden md:flex items-center justify-between px-8 py-2 text-gray-600 text-sm bg-white">
+      <div className="hidden md:flex items-center whitespace-nowrap justify-between px-8 pt-4 pb-8 text-gray-800 text-[17px] bg-white">
         <div className="flex items-center space-x-6">
-          <span>📞 +060 (800) 801-858</span>
-          <span>📧 info@electro.com</span>
+          <span className="flex flex-row items-center gap-3">
+            <Phone className="text-gray-500" /> +060 (800) 801-858
+          </span>
+          <span className="flex flex-row items-center gap-3">
+            <Mail className="text-gray-500" /> info@electro.com
+          </span>
         </div>
         <div className="flex items-center space-x-6">
-          <a href="#" className="hover:text-gray-800">
+          <a
+            href="#"
+            className="hover:text-gray-800 flex flex-row items-center gap-3"
+          >
+            <MapPin className="text-gray-500" />
             Store Locator
           </a>
-          <a href="#" className="hover:text-gray-800">
+          <a
+            href="#"
+            className="hover:text-gray-800 flex flex-row items-center gap-3"
+          >
+            <Truck className="text-gray-500" />
             Track Your Order
           </a>
-          <a href="#" className="hover:text-gray-800">
+          <a
+            href="#"
+            className="hover:text-gray-800 flex flex-row items-center gap-3"
+          >
+            <ShoppingBag className="text-gray-500" />
             Shop
           </a>
-          <a href="#" className="hover:text-gray-800">
+          <a
+            href="#"
+            className="hover:text-gray-800 flex flex-row items-center gap-3"
+          >
+            <User className="text-gray-500" />
             My Account
           </a>
         </div>
       </div>
 
       {/* Main Navbar */}
-      <div className="flex items-center justify-between px-4 py-3 md:px-8 bg-yellow-400">
+      <div className="flex items-center justify-between px-4 py-3 md:px-8">
         {/* Left Side: Hamburger Menu */}
+
+        {/* Logo */}
+        <div className="flex items-center pr-10">
+          <img
+            src="https://electro.madrasthemes.com/3x/wp-content/uploads/sites/4/2024/01/el-logo.svg"
+            alt="logo"
+          />
+        </div>
         <button
           onClick={toggleSidebar}
-          className="text-gray-800 text-2xl focus:outline-none"
+          className="text-gray-800 text-2xl focus:outline-none hidden lg:flex"
         >
           ☰
         </button>
 
-        {/* Logo */}
-        <div className="flex items-center">
-          <a href="#" className="text-3xl font-bold text-gray-800">
-            electro
-          </a>
-        </div>
-
         {/* Search Bar (Hidden on Small Screens) */}
-        <div className="hidden md:flex items-center flex-1 mx-8">
+        <div className="hidden md:flex items-center flex-1 ml-8 mr-12 relative">
           <input
             type="text"
             placeholder="Search products..."
-            className="w-full px-4 py-2 border rounded-l focus:outline-none"
+            className="w-full px-4 py-2 text-lg text-gray-700  h-14 rounded-full border-yellow-300 border-2  focus:outline-none"
           />
-          <button className="bg-yellow-500 px-4 py-2 rounded-r text-white">
-            🔍
+          <button className="bg-yellow-400 px-3 h-11 rounded-full text-gray-700 absolute left-[95%]">
+            <Search />
           </button>
         </div>
 
         {/* Icons */}
-        <div className="flex items-center space-x-6 text-gray-800">
+        <div className="flex gap-4 items-center space-x-6 text-gray-800">
           <a href="#" className="hover:text-gray-600">
-            🔄
+            <RefreshCcw />
           </a>
           <a href="#" className="hover:text-gray-600">
-            ❤️
+            <Heart />
           </a>
           <a href="#" className="relative hover:text-gray-600">
-            🛒
+            <ShoppingBag />
             <span className="absolute -top-2 -right-3 bg-yellow-500 text-white text-xs rounded-full px-1">
               0
             </span>
           </a>
+          <a href="#" className="hover:text-gray-500 text-xl font-semibold">
+            0.00
+          </a>
         </div>
       </div>
 
-       {/* Categories Section (Desktop Only) */}
-       <nav className="hidden md:flex items-center justify-center space-x-8 py-2 bg-white text-gray-800 text-sm">
-        <a href="#" className="flex items-center hover:text-yellow-500">
-          💻 Laptops & Computers
+      {/* Categories Section (Desktop Only) */}
+      <nav className="hidden md:flex items-center justify-center space-x-8 pt-3 pb-5 bg-white text-gray-600 font-medium text-lg whitespace-nowrap">
+        <a
+          href="#"
+          className="flex items-center hover:text-yellow-500 flex-row gap-2"
+        >
+          <Laptop className="text-gray-500 " size={26} /> Laptops & Computers
         </a>
-        <a href="#" className="flex items-center hover:text-yellow-500">
-          📷 Cameras
+        <a
+          href="#"
+          className="flex items-center hover:text-yellow-500 flex-row gap-2"
+        >
+          <Camera className="text-gray-500 " size={26} /> Cameras
         </a>
-        <a href="#" className="flex items-center hover:text-yellow-500">
-          📱 Smartphones & Tablets
+        <a
+          href="#"
+          className="flex items-center hover:text-yellow-500 flex-row gap-2"
+        >
+          <Smartphone  className="text-gray-500 " size={26} /> Smartphones & Tablets
         </a>
-        <a href="#" className="flex items-center hover:text-yellow-500">
-          🎮 Gaming
+        <a
+          href="#"
+          className="flex items-center hover:text-yellow-500 flex-row gap-2"
+        >
+          <Gamepad2  className="text-gray-500 " size={26} /> Gaming
         </a>
-        <a href="#" className="flex items-center hover:text-yellow-500">
-          📺 TV & Audio
+        <a
+          href="#"
+          className="flex items-center hover:text-yellow-500 flex-row gap-2"
+        >
+          <Tv className="text-gray-500 " size={26} /> TV & Audio
         </a>
-        <a href="#" className="flex items-center hover:text-yellow-500">
-          🎧 Headphones
+        <a
+          href="#"
+          className="flex items-center hover:text-yellow-500 flex-row gap-2"
+        >
+          <Headphones  className="text-gray-500 " size={26} /> Headphones
         </a>
-        <a href="#" className="flex items-center hover:text-yellow-500">
-          🚁 Drones
+        <a
+          href="#"
+          className="flex items-center hover:text-yellow-500 flex-row gap-2"
+        >
+          <Fan  className="text-gray-500 " size={26} /> Drones
         </a>
-        <a href="#" className="flex items-center hover:text-yellow-500">
-          🕶️ Virtual Reality
+        <a
+          href="#"
+          className="flex items-center hover:text-yellow-500 flex-row gap-2"
+        >
+          <MonitorPlay  className="text-gray-500 " size={26} /> Virtual Reality
         </a>
-        <a href="#" className="flex items-center hover:text-yellow-500">
-          🔌 Gadgets
+        <a
+          href="#"
+          className="flex items-center hover:text-yellow-500 flex-row gap-2"
+        >
+          <TabletSmartphone  className="text-gray-500 " size={26} /> Gadgets
         </a>
-        <a href="#" className="text-red-500 hover:underline">
-          🏷️ SuperDeals
+        <a href="#" className="text-red-500 hover:underline flex flex-row gap-2">
+          <PenTool   size={26} /> SuperDeals
         </a>
       </nav>
 
