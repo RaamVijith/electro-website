@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
       <div className=" mt-12">
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 ">
           <p className="text-gray-600 text-lg mb-4 md:mb-0">
-            © Electro: Buy electronics products and gadgets online
+            © Electro: Buy electronic products and gadgets online
           </p>
           <div className="flex items-center gap-4">
             <img src="https://electro.madrasthemes.com/3x/wp-content/uploads/sites/4/2023/10/payment_methods_logos.png" alt="Mastercard" className="h-6" />
